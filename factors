@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+def solve(num):
+    arr = [i for i in range(2, 100)]
+    for i in range(len(arr)):
+        if num % arr[i] == 0:
+            print(f"{num:d}={arr[i]:d}*{int(num/arr[i]):d}")
+            return
+    print(f"{num:d}={num:d}*{1}")
+numbers = []
+with open('test', 'r') as file:
+    for line in file:
+        numbers.append(line[:-1])
+
+numbers = [int(i) for i in numbers]
+for num in numbers:
+    solve(num)
